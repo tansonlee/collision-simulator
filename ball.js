@@ -1,16 +1,18 @@
 class Ball {
-	constructor(x, y) {
+	constructor(x, y, name) {
 		this.pos = createVector(x, y); // createVector is equivalent to PVector in processing
 		this.mass = 10;
 		this.vel = createVector(0, 0);
 		this.acc = createVector(0, 0);
 		this.d = 30; // diameter
+		this.name = name;
 	}
 
 	render() {
 		noStroke();
 		fill(135, 230, 51);
 		ellipse(this.pos.x, this.pos.y, this.d, this.d);
+		
 	}
 
 	update() {
@@ -24,4 +26,5 @@ class Ball {
 			this.vel.x *= -1;
 		}
 	}
+
 }

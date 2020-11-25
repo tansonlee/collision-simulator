@@ -4,9 +4,8 @@ let ballDisplay1;
 let ballDisplay2;
 
 function setup() {
-	const cnv = createCanvas(windowWidth - 50, windowHeight - 100);
+	const cnv = createCanvas(1200, 600);
   	cnv.style('display', 'block');
-	// createCanvas(400, 400);
 	ball1 = new Ball(100, 260, "Ball 1");
 	ball2 = new Ball(500, 180, "Ball 2");
 	ball1.vel.x = 4;
@@ -27,5 +26,4 @@ function draw() {
 	fill(255, 253, 208);
 	ballDisplay1.render();
 	ballDisplay2.render();
-	text("Velocity", )
 }

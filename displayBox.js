@@ -7,7 +7,7 @@ class DisplayBox {
 
 	render() {
 		fill(255, 253, 208);
-		rect(this.x, this.y, width * 0.1, height * 0.6);
+		rect(this.x, this.y, 100, 111);
 		fill(0);
 		textSize(16);
 		text(this.ball.name, (this.x + 30), (this.y + 20));

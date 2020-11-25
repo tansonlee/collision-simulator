@@ -39,7 +39,8 @@ class Ball {
 		drawArrow(start, end, "black");
 	}
 }
-function drawArrow(base, vec, myColor) {
+
+const drawArrow = (base, vec, myColor) => {
 	push();
 	stroke(myColor);
 	strokeWeight(3);
@@ -51,4 +52,4 @@ function drawArrow(base, vec, myColor) {
 	translate(vec.mag() - arrowSize, 0);
 	triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
 	pop();
-}
+};

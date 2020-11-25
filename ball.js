@@ -12,8 +12,7 @@ class Ball {
 		noStroke();
 		fill(135, 230, 51);
 		ellipse(this.pos.x, this.pos.y, this.d, this.d);
-
-		this.arrow();
+		this.arrow(0, 0, true);
 	}
 
 	update() {
@@ -28,10 +27,12 @@ class Ball {
 		}
 	}
 
-	arrow() {
-		const start = createVector(0, 0);
+	arrow(posx, posy, dynamic) {
+		const start = createVector(posx, posy);
 		const end = this.vel.copy().mult(10);
-		start.add(this.pos);
+		if (dynamic) {
+			start.add(this.pos);
+		}
 		drawArrow(start, end, "black");
 	}
 }

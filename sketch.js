@@ -17,12 +17,6 @@ function setup() {
 
 
 }
-  function windowResized() {
-	resizeCanvas(windowWidth - 50, windowHeight - 100);
-	ballDisplay1.resize(width - 300);
-	ballDisplay2.resize(width - 150);
-
-  }
 
 function draw() {
 	background(62);
@@ -31,7 +25,6 @@ function draw() {
 	ball1.render();
 	ball2.render();
 	fill(255, 253, 208);
-	triangle(0, 250, 600, 400, 0, 400);
 	ballDisplay1.render();
 	ballDisplay2.render();
 	text("Velocity", )

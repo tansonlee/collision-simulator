@@ -9,7 +9,7 @@ class Ball {
     }
 
     render() {
-        stroke(250, 0, 0);
+        //stroke(0, 90, 25);
         fill(230, 57, 70);
         ellipse(this.pos.x, this.pos.y, this.d, this.d);
         this.arrow(0, 0, true);

@@ -6,7 +6,7 @@ class DisplayBox {
     }
 
     render() {
-        fill(224, 251, 252, 150);
+        fill(231, 240, 228, 150);
         stroke(160);
         rect(this.x, this.y, 100, 150);
         noStroke();
@@ -19,8 +19,7 @@ class DisplayBox {
             this.x + 10,
             this.y + 40
         );
-        text(`Acceleration: ${this.ball.acc.x}`, this.x + 10, this.y + 140);
-        this.ball.arrow(this.x + 52, this.y + 80, false);
+        this.ball.arrow(this.x + 52, this.y + 90, false);
     }
     resize(newX) {
         this.x = newX;

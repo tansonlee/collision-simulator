@@ -8,14 +8,14 @@ let twoD;
 function setup() {
     const cnv = createCanvas(1200, 600);
     elasticCollision = true;
-    twoDCollision = false;
+    twoDCollision = true;
     cnv.style("display", "block");
-    ball1 = new Ball(640, 600, "Ball 1", 10);
-    ball2 = new Ball(100, 150, "Ball 2", 10);
+    ball1 = new Ball(500, 150, "Ball 1", 10);
+    ball2 = new Ball(640, 100, "Ball 2", 10);
     // ball1 = new Ball(200, 500, "Ball 1", 10);
     // ball2 = new Ball(500, 200, "Ball 2", 10);
-    ball1.vel.x = -10;
-    ball1.vel.y = -20;
+    ball1.vel.x = 10;
+    ball1.vel.y = -8;
     ball2.vel.x = 0;
     ball2.vel.y = 0;
     ball1.acc.y = 0;
@@ -27,7 +27,7 @@ function setup() {
 function draw() {
     background(241, 250, 238);
     if (!twoDCollision) {
-        fill(29, 53, 87);
+        fill(62);
         rect(0, 337.5, 1200, 300);
         ball1.vel.y = 0;
         ball2.vel.y = 0;

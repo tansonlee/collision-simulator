@@ -7,7 +7,7 @@ let twoD;
 
 function setup() {
     const cnv = createCanvas(1200, 600);
-    elasticCollision = true;
+    elasticCollision = false;
     twoDCollision = true;
     cnv.style("display", "block");
     ball1 = new Ball(500, 150, "Ball 1", 10);
@@ -22,6 +22,7 @@ function setup() {
     ball2.acc.y = 0;
     ballDisplay1 = new DisplayBox(ball1, width - 300, 20);
     ballDisplay2 = new DisplayBox(ball2, width - 150, 20);
+    b = createButton("click me");
 }
 
 function draw() {

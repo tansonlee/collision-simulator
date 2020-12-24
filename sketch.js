@@ -25,10 +25,10 @@ function setup() {
 }
 
 function draw() {
-    background(62);
+    background(241, 250, 238);
     if (!twoDCollision) {
-        fill(0);
-        rect(0, 337.5, 1200, 263, 10);
+        fill(29, 53, 87);
+        rect(0, 337.5, 1200, 300);
         ball1.vel.y = 0;
         ball2.vel.y = 0;
         ball1.pos.y = 300;
@@ -38,7 +38,6 @@ function draw() {
     ball2.update();
     ball1.render();
     ball2.render();
-    fill(255, 253, 208);
     ballDisplay1.render();
     ballDisplay2.render();
     if (isColliding(ball1, ball2)) {

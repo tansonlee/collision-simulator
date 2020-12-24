@@ -6,8 +6,10 @@ class DisplayBox {
     }
 
     render() {
-        fill(255, 253, 208, 150);
+        fill(224, 251, 252, 150);
+        stroke(160);
         rect(this.x, this.y, 100, 150);
+        noStroke();
         fill(0);
         textSize(16);
         text(this.ball.name, this.x + 30, this.y + 20);

@@ -1,11 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
 h1 {
-    text-align: center;
+	text-align: center;
 }
 button {
-    margin: 30px auto;
-    display: block;
+	margin-top: 20px;
+	background-color: antiquewhite;
+	border: none;
+	padding: 10px;
+	font-size: 25px;
+	font-family: "Roboto", sans-serif;
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	margin-right: 20px;
+	border-radius: 10%;
 }
 
-.hiddenButton {
-    visibility: hidden;
+button:hover {
+	background-color: red;
+}
+
+#button-wrapper {
+	position: relative;
+	text-align: center;
+}
+
+.start-button {
+	left: 50vw;
+}
+
+.reset-button {
+	right: 50vw;
 }

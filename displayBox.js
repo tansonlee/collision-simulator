@@ -1,13 +1,15 @@
 class DisplayBox {
     constructor(ball, x, y) {
         this.ball = ball;
+        this.ballColor = ball.ballColor;
         this.x = x;
         this.y = y;
     }
 
     render() {
         fill(231, 240, 228, 150);
-        stroke(160);
+        stroke(this.ballColor);
+        strokeWeight(3);
         rect(this.x, this.y, 100, 150);
         noStroke();
         fill(0);

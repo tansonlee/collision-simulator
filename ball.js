@@ -1,16 +1,17 @@
 class Ball {
-    constructor(x, y, name, mass) {
+    constructor(x, y, name, mass, ballColor) {
         this.pos = createVector(x, y); // createVector is equivalent to PVector in processing
         this.mass = mass;
         this.vel = createVector(0, 0);
         this.acc = createVector(0, 0);
         this.d = 75; // diameter
         this.name = name;
+        this.ballColor = ballColor;
     }
 
     render() {
         //stroke(0, 90, 25);
-        fill(230, 57, 70);
+        fill(this.ballColor);
         ellipse(this.pos.x, this.pos.y, this.d, this.d);
         this.arrow(0, 0, true);
     }

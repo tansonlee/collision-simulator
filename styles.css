@@ -5,3 +5,7 @@ button {
     margin: 30px auto;
     display: block;
 }
+
+.hiddenButton {
+    visibility: hidden;
+}

@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Collision Simulator</title>
+		<title>Collision Simulator</title>
 
-        <link rel="stylesheet" href="styles.css" />
-        <script src="libraries/p5.js"></script>
-        <script src="libraries/p5.dom.js"></script>
-        <script src="libraries/p5.sound.js"></script>
-        <script src="collisionFunctions.js"></script>
-        <script src="sketch.js"></script>
-        <script src="ball.js"></script>
-        <script src="displayBox.js"></script>
-    </head>
-    <body>
-        <h1>Collision Simulator</h1>
-        <div id="canvas-wrapper"></div>
-        <div id="button-wrapper"></div>
-    </body>
+		<link rel="stylesheet" href="styles.css" />
+		<script src="libraries/p5.js"></script>
+		<script src="libraries/p5.dom.js"></script>
+		<script src="libraries/p5.sound.js"></script>
+		<script src="helperFunctions/collisionFunctions.js"></script>
+		<script src="helperFunctions/eventHandlers.js"></script>
+		<script src="helperFunctions/initializingFunctions.js"></script>
+		<script src="helperFunctions/renderFunctions.js"></script>
+		<script src="classes/ball.js"></script>
+		<script src="classes/displayBox.js"></script>
+		<script src="sketch.js"></script>
+	</head>
+	<body>
+		<h1>Collision Simulator</h1>
+		<div id="canvas-wrapper"></div>
+		<div id="button-wrapper"></div>
+	</body>
 </html>

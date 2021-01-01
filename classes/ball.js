@@ -9,10 +9,18 @@ class Ball {
 	}
 
 	render() {
-		//stroke(0, 90, 25);
+		strokeWeight(3);
+		if (this.mouseOverBall()) {
+			if (mouseIsPressed) {
+				stroke(0);
+			} else {
+				stroke(120);
+			}
+		}
 		fill(this.ballColor);
 		ellipse(this.pos.x, this.pos.y, this.d, this.d);
 		this.arrow(0, 0, true);
+		noStroke();
 	}
 
 	update() {
@@ -32,6 +40,13 @@ class Ball {
 		} else {
 			drawArrow(start, end, "black");
 		}
+	}
+
+	mouseOverBall() {
+		return (
+			Math.abs(mouseX - this.pos.x) < this.d / 2 &&
+			Math.abs(mouseY - this.pos.y) < this.d / 2
+		);
 	}
 }
 

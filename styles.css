@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+html {
+    overflow: scroll;
+}
 
 h1 {
     text-align: center;
@@ -15,7 +18,7 @@ h1 {
 body {
     margin: 0;
     padding: 2;
-    overflow: hidden;
+    padding-bottom: 20px;
 }
 canvas {
     margin: auto;
@@ -23,15 +26,13 @@ canvas {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 button {
-    margin-top: 20px;
+    margin-top: 15px;
     background-color: #f5e2c9;
     border: none;
     padding: 10px;
     font-size: 25px;
     font-family: "Roboto", sans-serif;
     cursor: pointer;
-    display: block;
-    position: absolute;
     margin-right: 20px;
     border-radius: 10%;
     box-shadow: 0 1px 2px 0 rgba(5, 5, 5, 0.2), 0 2px 1px 0 rgba(5, 5, 5, 0.19);
@@ -46,14 +47,27 @@ button:focus {
 }
 
 #button-wrapper {
+    display: flex;
     position: relative;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
     text-align: center;
 }
 
-.start-button {
+/* .start-button {
     left: 50vw;
 }
 
 .reset-button {
     right: 50vw;
+} */
+
+.two-d-button {
+    position: absolute;
+    right: 250px;
+}
+.elastic-button {
+    position: absolute;
+    right: 100px;
 }

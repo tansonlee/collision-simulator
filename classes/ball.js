@@ -5,7 +5,11 @@ class Ball {
 		this.vel = vel;
 		this.d = 75; // diameter
 		this.name = name;
-		this.ballColor = ballColor;
+		this.ballColor = color(
+			ballColor.levels[0] - mass * 4 + 20,
+			ballColor.levels[1] - mass * 4 + 20,
+			ballColor.levels[2] - mass * 4 + 20
+		);
 	}
 
 	render() {

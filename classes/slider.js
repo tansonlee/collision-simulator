@@ -86,7 +86,7 @@ class CSlider {
             fill(102, 102, 102);
         }
         ellipse(
-            this.spos,
+            this.spos + this.height,
             this.y + this.height / 2,
             this.height * 2,
             this.height * 2

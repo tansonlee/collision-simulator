@@ -46,15 +46,14 @@ const updateBallVelSlider = () => {
 };
 
 const updateBallmassSlider = () => {
-    if (updateBallsFlag) {
-        return;
+    if (!updateBallsFlag) {
+        const newMass1 = massSlider1.value();
+        const newMass2 = massSlider2.value();
+
+        // change mass
+        ball1.mass = newMass1;
+        ball2.mass = newMass2;
     }
-
-    const newMass1 = massSlider1.value();
-    const newMass2 = massSlider2.value();
-
-    ball1.mass = newMass1;
-    ball2.mass = newMass2;
 };
 
 const addDescriptiveText = () => {

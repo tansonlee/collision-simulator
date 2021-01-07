@@ -5,17 +5,17 @@ const initializeBalls = () => {
     initialVelocity1 = createVector(10, -8);
     initialVelocity2 = createVector(1, 0);
 
-    ball1 = new Ball(null, null, "Ball 1", 10, ball1Color);
-    ball2 = new Ball(null, null, "Ball 2", 10, ball2Color);
+    ball1 = new Ball(null, null, "Ball 1", 5, ball1Color);
+    ball2 = new Ball(null, null, "Ball 2", 5, ball2Color);
 
     setInitialStates();
 };
 
 const initializeDisplays = () => {
-    velSlider1 = new CSlider(0, 12, 10, 0.01, ball1Color);
-    velSlider2 = new CSlider(0, 12, 1, 0.01, ball2Color);
-    massSlider1 = new CSlider(0, 10, 25, 0.5, ball1Color);
-    massSlider2 = new CSlider(0, 10, 25, 0.5, ball2Color);
+    velSlider1 = new CSlider(0, 12, 10, 0.1, ball1Color);
+    velSlider2 = new CSlider(0, 12, 1, 0.1, ball2Color);
+    massSlider1 = new CSlider(0, 10, 5, 0.1, ball1Color);
+    massSlider2 = new CSlider(0, 10, 5, 0.1, ball2Color);
     ballDisplay1 = new DisplayBox(
         ball1,
         width - 300,

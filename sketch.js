@@ -95,6 +95,7 @@ function mousePressed() {
     if (ball2.mouseOverBall()) {
         overBall2 = true;
     }
+    //if (ball1.mouseOverArrow())
 }
 
 function mouseReleased() {

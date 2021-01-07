@@ -10,8 +10,6 @@ const handleStart = () => {
     collisionOccurred = false;
     initialPos1 = ball1.pos.copy();
     initialPos2 = ball2.pos.copy();
-    initialVelocity1 = ball1.vel.copy();
-    initialVelocity1 = ball2.vel.copy();
 };
 
 const handleTwoD = () => {

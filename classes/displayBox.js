@@ -9,6 +9,10 @@ class DisplayBox {
     }
 
     render() {
+        stroke(0);
+        fill(0);
+        this.ball.arrow(this.x + 52, this.y + 105, false);
+        ellipse(this.x + 52, this.y + 105, 3, 3);
         fill(231, 240, 228, 150);
         stroke(this.ballColor);
         strokeWeight(3);
@@ -24,7 +28,6 @@ class DisplayBox {
             this.y + 40
         );
         this.velSlider.position(this.x + 10, this.y + 50);
-        this.ball.arrow(this.x + 52, this.y + 105, false);
         text(
             `Mass: ${this.ball.mass.toFixed(2)}`, // displays rounded mass
             this.x + 17,

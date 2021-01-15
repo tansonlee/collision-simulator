@@ -21,6 +21,8 @@ const handleTwoD = () => {
             twoDButton.addClass("pressed");
         }
     }
+    ball1.vel = initialVelocity1;
+    ball2.vel = initialVelocity2;
 };
 
 const handleElastic = () => {

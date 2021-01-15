@@ -83,7 +83,7 @@ class CSlider {
         if (this.over || this.locked) {
             fill(0, 0, 0);
         } else {
-            fill(102, 102, 102);
+            fill(130);
         }
         ellipse(
             this.spos + this.height,

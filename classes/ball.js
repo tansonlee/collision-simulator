@@ -40,6 +40,7 @@ class Ball {
             const reverseVel = this.vel.copy().mult(-1).setMag(30);
             const lineEnd = p5.Vector.add(start, reverseVel);
             linedash(start.x, start.y, lineEnd.x, lineEnd.y);
+            velocityDragger(start.x, start.y, lineEnd.x, lineEnd.y, this);
             // fill("green");
             // ellipse(start.x, start.y, 30, 30);
             // fill("blue");
@@ -81,6 +82,7 @@ const drawArrow = (base, vec) => {
     translate(vec.mag() - arrowSize, 0);
     triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
     pop();
+    noStroke();
 };
 
 const drawArrowControl = (base, vec) => {
@@ -106,7 +108,6 @@ function linedash(x1, y1, x2, y2, delta) {
     fill(0, 200);
 
     ellipse(x1, y1, 3, 3);
-    ellipse(x2 + xDelta * 0.3, y2 + yDelta * 0.3, 6, 6);
 
     stroke(0, 170);
     point(x1 + xDelta * 1, y1 + yDelta * 1);
@@ -124,6 +125,39 @@ function linedash(x1, y1, x2, y2, delta) {
     //     }
     // }
 }
+
+const velocityDragger = (x1, y1, x2, y2, ball) => {
+    noStroke();
+    let dashNumber = 4; // distance / delta;
+    let xDelta = Math.round((x2 - x1) / dashNumber);
+    let yDelta = Math.round((y2 - y1) / dashNumber);
+    const draggerPositionX = x2 + xDelta * 0.3;
+    const draggerPositionY = y2 + yDelta * 0.3;
+    const mouseOverDragger = () => {
+        if (mouseIsPressed) {
+            return (
+                dist(mouseX, mouseY, draggerPositionX, draggerPositionY) < 30
+            );
+        } else {
+            return (
+                dist(mouseX, mouseY, draggerPositionX, draggerPositionY) < 10
+            );
+        }
+    };
+    if (mouseOverDragger()) {
+        fill(0);
+        if (mouseIsPressed) {
+            const originalMagnitude = ball.vel.mag();
+            const mouseVector = createVector(mouseX, mouseY);
+            const arrowCenter = createVector(x1, y1);
+            ball.vel = p5.Vector.sub(arrowCenter, mouseVector);
+            ball.vel.setMag(originalMagnitude);
+        }
+    } else {
+        fill(130);
+    }
+    ellipse(draggerPositionX, draggerPositionY, 10, 10);
+};
 
 const constrainVector = (v, min, max) => {
     const copy = v.copy();

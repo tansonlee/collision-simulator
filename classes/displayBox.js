@@ -11,12 +11,13 @@ class DisplayBox {
     render() {
         stroke(0);
         fill(0);
-        this.ball.arrow(this.x + 52, this.y + 105, false);
         ellipse(this.x + 52, this.y + 105, 3, 3);
         fill(231, 240, 228, 150);
         stroke(this.ballColor);
         strokeWeight(3);
         rect(this.x, this.y, 100, 200);
+        noStroke();
+        this.ball.arrow(this.x + 52, this.y + 105, false);
         noStroke();
         fill(0);
         textSize(16);

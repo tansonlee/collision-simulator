@@ -35,12 +35,22 @@ class Ball {
         if (dynamic) {
             // whether arrow should follow ball
             start.add(this.pos);
+            if (!updateBallsFlag) {
+                const reverseVel = this.vel.copy().mult(-1).setMag(60);
+                const lineEnd = p5.Vector.add(start, reverseVel);
+                linedash(start.x, start.y, lineEnd.x, lineEnd.y);
+                if (this.vel.mag() != 0) {
+                    velocityDragger(
+                        start.x,
+                        start.y,
+                        lineEnd.x,
+                        lineEnd.y,
+                        this
+                    );
+                }
+            }
         } else {
-            end.mult(1.1);
-            const reverseVel = this.vel.copy().mult(-1).setMag(30);
-            const lineEnd = p5.Vector.add(start, reverseVel);
-            linedash(start.x, start.y, lineEnd.x, lineEnd.y);
-            velocityDragger(start.x, start.y, lineEnd.x, lineEnd.y, this);
+            end.mult(1.3);
             // fill("green");
             // ellipse(start.x, start.y, 30, 30);
             // fill("blue");
@@ -95,13 +105,13 @@ const drawArrowControl = (base, vec) => {
     let e = lerp(a, b, 0.8);
 };
 
-function linedash(x1, y1, x2, y2, delta) {
+function linedash(x1, y1, x2, y2) {
     // delta is both the length of a dash, the distance between 2 dots/dashes, and the diameter of a round
     // const delta = 3;
     // stroke(0);
     // fill(0);
     // let distance = 30; //dist(x1, y1, x2, y2);
-    let dashNumber = 4; // distance / delta;
+    let dashNumber = 8; // distance / delta;
     let xDelta = Math.round((x2 - x1) / dashNumber);
     let yDelta = Math.round((y2 - y1) / dashNumber);
 
@@ -110,9 +120,10 @@ function linedash(x1, y1, x2, y2, delta) {
     ellipse(x1, y1, 3, 3);
 
     stroke(0, 170);
-    point(x1 + xDelta * 1, y1 + yDelta * 1);
-    point(x1 + xDelta * 2, y1 + yDelta * 2);
-    point(x1 + xDelta * 3, y1 + yDelta * 3);
+    for (let i = 1; i < dashNumber; i++) {
+        point(x1 + xDelta * i, y1 + yDelta * i);
+    }
+
     // point(x1 + xDelta * 4, y1 + yDelta * 4);
 
     // for (let i = 0; i < dashNumber; i += 2) {
@@ -136,11 +147,11 @@ const velocityDragger = (x1, y1, x2, y2, ball) => {
     const mouseOverDragger = () => {
         if (mouseIsPressed) {
             return (
-                dist(mouseX, mouseY, draggerPositionX, draggerPositionY) < 30
+                dist(mouseX, mouseY, draggerPositionX, draggerPositionY) < 60
             );
         } else {
             return (
-                dist(mouseX, mouseY, draggerPositionX, draggerPositionY) < 10
+                dist(mouseX, mouseY, draggerPositionX, draggerPositionY) < 15
             );
         }
     };
@@ -150,13 +161,17 @@ const velocityDragger = (x1, y1, x2, y2, ball) => {
             const originalMagnitude = ball.vel.mag();
             const mouseVector = createVector(mouseX, mouseY);
             const arrowCenter = createVector(x1, y1);
-            ball.vel = p5.Vector.sub(arrowCenter, mouseVector);
-            ball.vel.setMag(originalMagnitude);
+            if (twoDCollision) {
+                ball.vel = p5.Vector.sub(arrowCenter, mouseVector);
+                ball.vel.setMag(originalMagnitude);
+            } else {
+                ball.vel = p5.Vector.mult(ball.vel, -1);
+            }
         }
     } else {
         fill(130);
     }
-    ellipse(draggerPositionX, draggerPositionY, 10, 10);
+    ellipse(draggerPositionX, draggerPositionY, 15, 15);
 };
 
 const constrainVector = (v, min, max) => {

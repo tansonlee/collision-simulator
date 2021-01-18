@@ -5,8 +5,8 @@ const initializeBalls = () => {
 	initialVelocity1 = createVector(10, -8);
 	initialVelocity2 = createVector(1, 0);
 
-	ball1 = new Ball(null, null, "Ball 1", 5, ball1Color);
-	ball2 = new Ball(null, null, "Ball 2", 5, ball2Color);
+	ball1 = new Ball(initialPos1, initialVelocity1, "Ball 1", 5, ball1Color);
+	ball2 = new Ball(initialPos2, initialVelocity2, "Ball 2", 5, ball2Color);
 
 	setInitialStates();
 };

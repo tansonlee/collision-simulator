@@ -32,7 +32,8 @@ class Ball {
 		const start = createVector(posx, posy);
 		let temp;
 		if (this.vel.mag() === 0) {
-			temp = this.oldVel.copy();
+			const oldVel = this.vel.copy();
+			temp = oldVel.copy();
 		} else {
 			temp = this.vel.copy();
 		}

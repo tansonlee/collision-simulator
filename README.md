@@ -11,6 +11,8 @@ The hosted project can be found here: [Collision Simulator](https://tansonlee.gi
 
 <img src="./assets/collision.gif" width="800px">
 
+<img src="./assets/collision2.gif" width="800px">
+
 ## Introduction
 
 As students who once took introductory physics classes, we thought a visualizer would be particularly useful for collisions. These can be counter-intuitive, so we thought that a simulator could help with this.
